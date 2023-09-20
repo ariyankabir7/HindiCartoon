@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/dialogbg">
+
+    <ImageView
+        android:layout_width="70dp"
+        android:layout_height="3dp"
+        android:layout_marginVertical="10dp"
+        android:src="@drawable/baseline_remove_24"
+        android:layout_gravity="center|top"
+        android:scaleType="centerCrop"
+        app:tint="#787878" />
+    <ImageView
+        android:elevation="20dp"
+        android:layout_width="26dp"
+        android:layout_height="26dp"
+        android:src="@drawable/close"
+        android:layout_gravity="right"
+        android:layout_marginTop="-25dp"
+        android:layout_marginRight="5dp"
+        android:id="@+id/buttonClose"
+        app:tint="#787878"/>
+
+
+
+
+    <LinearLayout
+        android:id="@+id/shareApp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="7dp"
+        android:background="@drawable/bottom_card_bg"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingTop="15dp"
+        android:paddingBottom="15dp">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="28dp"
+            android:src="@drawable/send" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:fontFamily="sans-serif-black"
+            android:text="Share With Friends"
+            android:textColor="#6969FF"
+            android:textSize="17sp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/privacyPolicy"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="2dp"
+        android:layout_marginBottom="7dp"
+        android:background="@drawable/bottom_card_bg"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingTop="15dp"
+        android:paddingBottom="15dp">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="35dp"
+            android:src="@drawable/privacy" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:fontFamily="sans-serif-black"
+            android:text="Privacy Policy"
+            android:textColor="#6969FF"
+            android:textSize="17sp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/reward"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="2dp"
+        android:layout_marginBottom="7dp"
+        android:background="@drawable/bottom_card_bg"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingTop="15dp"
+        android:paddingBottom="15dp">
+
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:src="@drawable/reward" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:fontFamily="sans-serif-black"
+            android:text="Get Reawrds    (AD)"
+            android:textColor="#6969FF"
+            android:textSize="17sp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/rateUs"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="2dp"
+        android:layout_marginBottom="7dp"
+        android:background="@drawable/bottom_card_bg"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingTop="15dp"
+        android:paddingBottom="15dp">
+
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="29dp"
+            android:src="@drawable/rating" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:fontFamily="sans-serif-black"
+            android:text="Rate Us"
+            android:textColor="#6969FF"
+            android:textSize="17sp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/exitApp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="2dp"
+        android:layout_marginBottom="7dp"
+        android:background="@drawable/bottom_card_bg"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingTop="15dp"
+        android:paddingBottom="15dp">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="29dp"
+            android:src="@drawable/logout" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:fontFamily="sans-serif-black"
+            android:text="Exit Application"
+            android:textColor="#6969FF"
+            android:textSize="17sp" />
+    </LinearLayout>
+
+</LinearLayout>
