@@ -47,7 +47,7 @@ class videoAdapter(
                 if (position != RecyclerView.NO_POSITION) {
 
                     val url =
-                        "https://vizzorewards.com/getaia/cartoonapp/Increase_viewsNew.php?id=${clickedVideo.id}&cat=${clickedVideo.c_id}&device=$deviceId"
+                        "https://vizzorewards.com/getaia/hindicartoon/Increase_viewsNew.php?id=${clickedVideo.id}&cat=${clickedVideo.c_id}&device=$deviceId"
 
                     val requestQueue = Volley.newRequestQueue(context)
 

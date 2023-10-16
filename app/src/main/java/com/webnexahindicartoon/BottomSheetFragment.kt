@@ -23,6 +23,7 @@ class BottomSheetFragment() : BottomSheetDialogFragment() {
             mainActivity = context
         }
     }
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -34,10 +35,12 @@ class BottomSheetFragment() : BottomSheetDialogFragment() {
         super.onDismiss(dialog)
         mainActivity?.callHomeScreen()
     }
+
     override fun onDetach() {
         super.onDetach()
         mainActivity = null
     }
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
@@ -49,26 +52,36 @@ class BottomSheetFragment() : BottomSheetDialogFragment() {
         val exitAppLayout = view.findViewById<LinearLayout>(R.id.exitApp)
 
         shareAppLayout.setOnClickListener {
-            // Handle the "Share With Friends" item click
-            // Add your logic here
+            val sharingText = "Watch Hindi Cartoon Free From this App: " +
+                    "https://play.google.com/store/apps/details?id=com.webnexahindicartoon"
+
+            val shareIntent = Intent(Intent.ACTION_SEND)
+            shareIntent.type = "text/plain"
+            shareIntent.putExtra(Intent.EXTRA_TEXT, sharingText)
+
+            startActivity(Intent.createChooser(shareIntent, "Share Raksha Bandhan Status"))
         }
         closeBtn.setOnClickListener {
             dialog?.dismiss()
         }
         privacyPolicyLayout.setOnClickListener {
-            val uri = Uri.parse("http://www.google.com") // missing 'http://' will cause crashed
+            val uri =
+                Uri.parse("https://www.app-privacy-policy.com/live.php?token=114xQngq7buVTwVcVJDFQk6IVILv4xfi") // missing 'http://' will cause crashed
             val intent = Intent(Intent.ACTION_VIEW, uri)
             startActivity(intent)
         }
         rewardLayout.setOnClickListener {
-            val uri = Uri.parse("http://www.google.com") // missing 'http://' will cause crashed
-            val intent = Intent(Intent.ACTION_VIEW, uri)
+
+           val intent=Intent(mainActivity,EarnHomeActivity::class.java)
             startActivity(intent)
         }
 
         rateUsLayout.setOnClickListener {
             val intent =
-                Intent(Intent.ACTION_VIEW, Uri.parse("market://details?id={${Constants.APP_PACKAGE}}"))
+                Intent(
+                    Intent.ACTION_VIEW,
+                    Uri.parse("market://details?id=${Constants.APP_PACKAGE}")
+                )
             startActivity(intent)
         }
 

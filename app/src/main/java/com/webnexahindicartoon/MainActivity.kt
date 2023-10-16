@@ -34,11 +34,11 @@ class MainActivity : AppCompatActivity() {
     var normalHomeOpened = true
 
     override fun onCreate(savedInstanceState: Bundle?) {
-        installSplashScreen()
         binding = ActivityMainBinding.inflate(layoutInflater)
         requestQueue = Volley.newRequestQueue(this)
-
         super.onCreate(savedInstanceState)
+        installSplashScreen()
+
         setContentView(binding.root)
         binding.shimmerView.duration = 900
         binding.shimmerView.startShimmerAnimation()
@@ -136,7 +136,7 @@ class MainActivity : AppCompatActivity() {
 
     private fun getVideos(onSuccess: (ArrayList<videosModal>) -> Unit, onError: (String) -> Unit) {
         val deviceId = Settings.Secure.getString(this.contentResolver, Settings.Secure.ANDROID_ID)
-        val url = "https://vizzorewards.com/getaia/cartoonapp/getvideos_home.php?device=$deviceId"
+        val url = "https://vizzorewards.com/getaia/hindicartoon/getvideos_home.php?device=$deviceId"
 
         val jsonArrayRequest = JsonArrayRequest(
             Request.Method.GET, url, null,
@@ -176,7 +176,7 @@ class MainActivity : AppCompatActivity() {
         onSuccess: (List<videosModal>) -> Unit,
         onError: (String) -> Unit
     ) {
-        val url = "https://vizzorewards.com/getaia/cartoonapp/getvideos_popular.php"
+        val url = "https://vizzorewards.com/getaia/hindicartoon/getvideos_popular.php"
 
         val jsonArrayRequest = JsonArrayRequest(
             Request.Method.GET, url, null,
@@ -213,7 +213,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun getCategories(onSuccess: (List<CategoryModal>) -> Unit, onError: (String) -> Unit) {
-        val url = "https://vizzorewards.com/getaia/cartoonapp/getcategory.php"
+        val url = "https://vizzorewards.com/getaia/hindicartoon/getcategory.php"
 
         val jsonArrayRequest = JsonArrayRequest(
             Request.Method.GET, url, null,

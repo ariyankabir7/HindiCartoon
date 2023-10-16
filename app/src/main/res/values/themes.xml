@@ -6,9 +6,11 @@
     </style>
 
     <style name="Theme.HindiCartoon" parent="Base.Theme.HindiCartoon" />
+
     <style name="Theme.Webnexa.SpalashTheme" parent="Theme.SplashScreen">
         <item name="android:statusBarColor">@android:color/white</item>
         <item name="windowSplashScreenBackground">@color/colorPrimary</item>
         <item name="windowSplashScreenAnimatedIcon">@drawable/app_logo</item>
+<item name="postSplashScreenTheme">@style/Theme.HindiCartoon</item>
     </style>
 </resources>

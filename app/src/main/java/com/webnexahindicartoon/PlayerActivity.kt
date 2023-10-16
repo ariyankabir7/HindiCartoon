@@ -77,7 +77,17 @@ class PlayerActivity : AppCompatActivity() {
         val videoId = videoLink?.let { extractYouTubeVideoId(it) }
         val yt = YTExtractor(con = this, CACHING = false, LOGGING = false, retryCount = 3)
 
-
+        binding.videoRecycleView.layoutManager =
+            LinearLayoutManager(
+                this@PlayerActivity,
+                LinearLayoutManager.VERTICAL,
+                false
+            )
+        videoAdapter = playerVideoAdapter(this@PlayerActivity, ArrayList())
+        binding.videoRecycleView.adapter = videoAdapter
+        if (receivedVideosList != null) {
+            videoAdapter.updateVideo(receivedVideosList)
+        }
 
         GlobalScope.launch {
             if (videoId != null) {
@@ -87,17 +97,7 @@ class PlayerActivity : AppCompatActivity() {
             Handler(Looper.getMainLooper()).post {
 
                 if (yt.state == State.SUCCESS) {
-                    binding.videoRecycleView.layoutManager =
-                        LinearLayoutManager(
-                            this@PlayerActivity,
-                            LinearLayoutManager.VERTICAL,
-                            false
-                        )
-                    videoAdapter = playerVideoAdapter(this@PlayerActivity, ArrayList())
-                    binding.videoRecycleView.adapter = videoAdapter
-                    if (receivedVideosList != null) {
-                        videoAdapter.updateVideo(receivedVideosList)
-                    }
+
                     ytFiles = yt.getYTFiles()!!
                    
 
